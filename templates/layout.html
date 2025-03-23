@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+        .btn-right {
+            float: right;
+            background-color: red;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('button_click') }}" method="post">
+        <button type="submit" class="btn btn-right btn-lg">{% block button %} {% endblock %}</button>
+    </form>
+    {% block content %}{% endblock %}
+</body>
+</html>
